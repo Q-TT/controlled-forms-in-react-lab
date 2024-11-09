@@ -1,4 +1,6 @@
+import '../index.css';
 import { useState } from 'react';
+
 const Bookshelf = () => {
     const [books, setBooks] = useState([
         { title: 'Fourth Wing', author: 'Rebecca Yarros' },
@@ -27,11 +29,22 @@ const Bookshelf = () => {
                         ></input>
                     </div>
                 </form>
+                <button>Add book</button>
+
+            </div>
+            
+            <div className="bookCardsDiv">
+                {books.map((eachBook)=> {
+                    return(
+                        <div className="bookCard">
+                            <h3>{eachBook.title}</h3>
+                            <p>by {eachBook.author}</p>
+                        </div>
+                    )
+                })}      
+
             </div>
 
-            <div className="bookCardsDiv">
-                
-            </div>
         </div>
 
     )
